@@ -460,19 +460,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\brock\\.nuget\\packages\\": {}
+    "C:\\Users\\Brock Mortenson\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\brock\\coding-projects\\StockTracker.Web\\StockTracker.Web.csproj",
+      "projectUniqueName": "C:\\Users\\Brock Mortenson\\coding-projects-laptop\\StockTracker.Web\\StockTracker.Web.csproj",
       "projectName": "StockTracker.Web",
-      "projectPath": "C:\\Users\\brock\\coding-projects\\StockTracker.Web\\StockTracker.Web.csproj",
-      "packagesPath": "C:\\Users\\brock\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\brock\\coding-projects\\StockTracker.Web\\obj\\",
+      "projectPath": "C:\\Users\\Brock Mortenson\\coding-projects-laptop\\StockTracker.Web\\StockTracker.Web.csproj",
+      "packagesPath": "C:\\Users\\Brock Mortenson\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Brock Mortenson\\coding-projects-laptop\\StockTracker.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\brock\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Brock Mortenson\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"

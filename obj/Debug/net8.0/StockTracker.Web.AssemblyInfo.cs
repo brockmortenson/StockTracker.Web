@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StockTracker.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6eb5209dd8736199252347ed94fa8a946e2f7c9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4999c90f94bc62a267e0a7922165e126d39afc72")]
 [assembly: System.Reflection.AssemblyProductAttribute("StockTracker.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StockTracker.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
