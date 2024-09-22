@@ -1,5 +1,11 @@
 header {
-    width: 100%;
-    height: 4rem;
-    background-color: aquamarine;
+    background-color: theme('colors.raisin-black');
+
+    > div {
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+            background-color: #424C55;
+        }
+    }
 }

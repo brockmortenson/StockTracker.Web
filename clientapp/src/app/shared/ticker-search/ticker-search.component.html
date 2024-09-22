@@ -1,0 +1,17 @@
+<form id="search-form">
+    <mat-form-field appearance="outline">
+        <mat-icon matPrefix>search</mat-icon>
+        <input placeholder="Search company or ticker"
+        matInput
+        [formControl]="searchControl"
+        [matAutocomplete]="auto"
+        [style.color]="'#FFFFFF'">
+    </mat-form-field>
+    <mat-autocomplete #auto="matAutocomplete">
+        @for (ticker of bestMatches; track $index) {
+            <mat-option [value]="ticker['1. symbol']" (click)="searchTicker(ticker)">
+                <span>{{ ticker['1. symbol'] }}: </span>
+            </mat-option>
+        }
+    </mat-autocomplete>
+</form>

@@ -1,4 +1,6 @@
+import { SearchFunction } from "./search-function.type";
+
 export interface ITickerRequest {
-    function: string;
+    function: SearchFunction;
     keywords: string;
 }
