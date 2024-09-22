@@ -1,28 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { StockTrackerService } from 'src/app/services/stock-tracker.service';
-import { ITickerRequest } from './shared/interfaces/ticker-request.interface';
-import { IMatches } from './shared/interfaces/ticker.interface';
+import { RouterOutlet } from '@angular/router';
+import { sharedImports } from './shared/utilities/shared-imports';
+import { materialImports } from './shared/utilities/material-imports';
+import { MatIconRegistry } from '@angular/material/icon';
+import { SubHeaderComponent } from './shared/sub-header/sub-header.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+    selector: 'app-root',
+    standalone: true,
+    imports: [RouterOutlet, ...sharedImports, ...materialImports, SubHeaderComponent],
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'clientapp';
-  constructor(private stockTrackerService: StockTrackerService) { }
+
+  constructor(private matIconReg: MatIconRegistry) { }
 
   public ngOnInit(): void {
-    // this.stockTrackerService.getTicker().subscribe((x) => {
-    //   console.log(x);
-    // });
-  }
-
-  public search(): void {
-    const element = document.getElementById('input') as any;
-    const request: ITickerRequest = { function: 'SYMBOL_SEARCH', keywords: element.value };
-    this.stockTrackerService.getTicker(request).subscribe((matches: IMatches) => {
-      console.log(matches.bestMatches[0]["1. symbol"]);
-    });
+    this.matIconReg.setDefaultFontSetClass('material-symbols-outlined');
   }
 }

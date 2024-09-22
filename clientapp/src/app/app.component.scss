@@ -1,0 +1,11 @@
+header {
+    background-color: theme('colors.raisin-black');
+
+    > div {
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+            background-color: #424C55;
+        }
+    }
+}
