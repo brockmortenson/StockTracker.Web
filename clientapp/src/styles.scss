@@ -6,3 +6,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* MatSnackBar custom styling */
+.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+    background-color: theme('colors.charcoal') !important;
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__label {
+    color: theme('colors.alice-blue') !important;
+}

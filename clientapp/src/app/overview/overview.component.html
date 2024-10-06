@@ -1,3 +1,19 @@
 <p>
   overview works!
 </p>
+
+<div >
+  <div>
+    @for (chartData of chartsData; track chartData) {
+      <div>
+        <canvas baseChart
+        type="line"
+        [data]="chartData"
+        [options]="chartOptions"
+        ></canvas>
+      </div>
+    } @empty {
+      <div>No chart data</div>
+    }
+  </div>
+</div>

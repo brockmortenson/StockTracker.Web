@@ -1,12 +1,17 @@
 <header class="w-full h-20 px-4 flex items-center bg-raisin-black">
   <div class="rounded-lg flex items-center p-2 cursor-pointer">
-    <span class="text-xl mr-2 text-alice-blue">Stonk Monitor</span>
-    <mat-icon class="text-alice-blue">monitoring</mat-icon>
+    <span class="text-xl mr-2 text-alice-blue-dark">Stonk Monitor</span>
+    <mat-icon class="text-alice-blue-dark">monitoring</mat-icon>
   </div>
 </header>
 
 <app-sub-header></app-sub-header>
 
-<main class="h-[calc(100%-7rem)] text-alice-blue bg-raisin-black p-4">
+<main class="h-[calc(100%-8rem)] text-alice-blue-dark bg-raisin-black p-6">
+  @if (isLoading) {
+    <div class="absolute inset-0 w-full h-full flex items-center justify-center bg-alice-blue-darkest z-50">
+      <span class="loader"></span>
+    </div>
+  }
   <router-outlet></router-outlet>
 </main>
