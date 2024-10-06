@@ -33,9 +33,23 @@ namespace StockTracker.Web.Services
             _apiKey = _configuration["Api_Key"];
         }
 
-        public async Task<string> GetTicker(TickerRequest request)
+        public async Task<string> GetTicker(SearchRequest request)
         {
             var requestUrl = $"https://www.alphavantage.co/query?function={request.Function}&keywords={request.Keywords}&apikey={_apiKey}";
+            var response = await _httpClient.GetAsync(requestUrl);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                return responseContent;
+            }
+
+            return null;
+        }
+
+        public async Task<string> GetTimeSeriesIntraday(SearchRequest request)
+        {
+            var requestUrl = $"https://www.alphavantage.co/query?function={request.Function}&symbol={request.Symbol}&interval={request.Interval}&apikey={_apiKey}";
             var response = await _httpClient.GetAsync(requestUrl);
 
             if (response.IsSuccessStatusCode)

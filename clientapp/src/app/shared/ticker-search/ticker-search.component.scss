@@ -1,0 +1,27 @@
+.mat-mdc-text-field-wrapper {
+    height: 42px !important;
+}
+
+.mat-mdc-form-field {
+    height: 42px !important;
+}
+
+.mat-mdc-form-field-flex {
+    height: 42px !important;
+}
+
+.mdc-text-field--outlined .mat-mdc-form-field-infix, .mdc-text-field--no-label .mat-mdc-form-field-infix {
+    padding-top: 10px !important;
+}
+
+.mat-mdc-notch-piece {
+    border-color: theme('colors.alice-blue-dark') !important;
+}
+
+input[matInput] {
+    color: theme('colors.alice-blue-dark') !important;
+
+    &::placeholder {
+        color: theme('colors.alice-blue-darker') !important;
+    }
+}
