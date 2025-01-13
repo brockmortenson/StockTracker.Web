@@ -5,4 +5,5 @@ export interface ISearchRequest {
     keywords?: string;
     symbol?: string;
     interval?: string;
+    extendedHours?: string;
 }

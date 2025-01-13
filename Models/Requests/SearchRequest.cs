@@ -21,5 +21,10 @@ namespace StockTracker.Web.Models
         /// Interval.
         /// </summary>
         public string Interval { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Extended hours.
+        /// </summary>
+        public string ExtendedHours { get; set; } = string.Empty;
     }
 }

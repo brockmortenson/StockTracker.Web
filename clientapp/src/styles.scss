@@ -5,7 +5,18 @@
 @tailwind utilities;
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+
+    ::-webkit-scrollbar {
+        width: 8px;
+      }
+       
+      ::-webkit-scrollbar-thumb {
+        background-color: theme('colors.alice-blue');
+      }
+}
 
 
 /* MatSnackBar custom styling */
@@ -15,4 +26,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mat-mdc-snack-bar-container .mdc-snackbar__label {
     color: theme('colors.alice-blue') !important;
+}
+
+.mat-mdc-snack-bar-container .mdc-button__label {
+    color: theme('colors.web-orange') !important;
 }

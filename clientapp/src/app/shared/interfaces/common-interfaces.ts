@@ -1,3 +1,5 @@
+import { ChartConfiguration } from "chart.js";
+
 export interface IMatches {
     bestMatches: Array<ITicker>;
 }
@@ -39,3 +41,39 @@ export interface ITimeSeriesData {
     "4. close": string;
     "5. volume": string;   
 }
+
+export interface ITickerSummary {
+    symbol: string;
+    open: number;
+    close: number;
+    percentChange: number;
+}
+
+export const DefaultChartOptions: ChartConfiguration['options'] = {
+    responsive: true,
+    scales: {
+        x: {
+        ticks: {
+            color: '#EAF6FF',
+        },
+        grid: {
+            color: '',
+        },
+        border: {
+            color: '#009FFD',
+        },
+        },
+        y: {
+        beginAtZero: false,
+        ticks: {
+            color: '#EAF6FF',
+        },
+        grid: {
+            color: '',
+        },
+        border: {
+            color: '#009FFD',
+        },
+        },
+    },
+};

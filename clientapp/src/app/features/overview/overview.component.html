@@ -1,0 +1,22 @@
+<div>
+  <div class="mx-16 grid grid-cols-1 gap-8">
+    <div class="flex flex-wrap justify-center gap-20">
+      @for (etf of currentETFsSummaries; track etf) {
+        <div class="flex gap-4 p-4 bg-web-orange rounded-lg hover:border-text-alice-blue-dark hover:scale-[1.05] hover:cursor-pointer transition-all"
+        (click)="openETF(etf.symbol)">
+          <div>
+            <p class="text-alice-blue-dark text-2xl font-semibold">{{ etf.symbol }}</p>
+            <div>
+              <p class="text-alice-blue-dark">Open {{ etf.open | currency: 'USD' }}</p>
+              <p class="text-alice-blue-dark">Latest {{ etf.close | currency: 'USD' }}</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <p class="text-alice-blue-dark p-4 text-xl rounded-lg bg-raisin-black"
+            [class]="etf.open < etf.close ? 'text-pastel-green' : 'text-pastel-red'">{{ etf.percentChange }}%</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

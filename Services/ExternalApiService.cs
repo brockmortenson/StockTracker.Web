@@ -23,6 +23,11 @@ namespace StockTracker.Web.Services
         private readonly string ?_apiKey;
 
         /// <summary>
+        /// Base API url.
+        /// </summary>
+        private string baseUrl = "https://www.alphavantage.co/query?";
+
+        /// <summary>
         /// ExternalApiService constructor.
         /// </summary>
         /// <param name="httpClient"></param>
@@ -35,7 +40,7 @@ namespace StockTracker.Web.Services
 
         public async Task<string> GetTicker(SearchRequest request)
         {
-            var requestUrl = $"https://www.alphavantage.co/query?function={request.Function}&keywords={request.Keywords}&apikey={_apiKey}";
+            var requestUrl = ConstructUrl(request);
             var response = await _httpClient.GetAsync(requestUrl);
 
             if (response.IsSuccessStatusCode)
@@ -49,7 +54,7 @@ namespace StockTracker.Web.Services
 
         public async Task<string> GetTimeSeriesIntraday(SearchRequest request)
         {
-            var requestUrl = $"https://www.alphavantage.co/query?function={request.Function}&symbol={request.Symbol}&interval={request.Interval}&apikey={_apiKey}";
+            var requestUrl = ConstructUrl(request);
             var response = await _httpClient.GetAsync(requestUrl);
 
             if (response.IsSuccessStatusCode)
@@ -59,6 +64,41 @@ namespace StockTracker.Web.Services
             }
 
             return null;
+        }
+
+        private string ConstructUrl(SearchRequest request)
+        {
+            string constructedUrl = string.Empty;
+            constructedUrl += baseUrl;
+
+            if (!string.IsNullOrEmpty(request.Function))
+            {
+                constructedUrl += $"function={Uri.EscapeDataString(request.Function)}";
+            }
+
+            if (!string.IsNullOrEmpty(request.Symbol))
+            {
+                constructedUrl += $"&symbol={Uri.EscapeDataString(request.Symbol)}";
+            }
+
+            if (!string.IsNullOrEmpty(request.Keywords))
+            {
+                constructedUrl += $"&keywords={Uri.EscapeDataString(request.Keywords)}";
+            }
+
+            if (!string.IsNullOrEmpty(request.Interval))
+            {
+                constructedUrl += $"&interval={Uri.EscapeDataString(request.Interval)}";
+            }
+
+            if (!string.IsNullOrEmpty(request.ExtendedHours))
+            {
+                constructedUrl += $"&extended_hours={Uri.EscapeDataString(request.ExtendedHours)}";
+            }
+
+            constructedUrl += $"&apikey={_apiKey}";
+
+            return constructedUrl;
         }
     }
 }
