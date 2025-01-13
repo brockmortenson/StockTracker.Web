@@ -40,7 +40,7 @@ export class TickerSearchComponent implements OnInit, OnDestroy {
       const request: ISearchRequest = { function: 'SYMBOL_SEARCH', keywords: this.searchControl.value as string };
       this.subscriptions.add(this.stockTrackerService.getTicker(request).subscribe({
         next: (matches: IMatches) => {
-          if (matches !== null && matches?.bestMatches?.length) {
+          if (matches && matches?.bestMatches?.length) {
             console.log(matches);
             this.bestMatches = matches.bestMatches;
           }

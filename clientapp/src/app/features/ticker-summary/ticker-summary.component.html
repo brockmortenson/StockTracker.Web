@@ -1,0 +1,11 @@
+<div>
+  @if (chartData) {
+    <div>
+      <canvas baseChart
+      type="line"
+      [data]="chartData"
+      [options]="defaultChartOptions"
+      ></canvas>
+    </div>
+  }
+</div>
