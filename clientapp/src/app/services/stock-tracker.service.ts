@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ChartConfiguration } from 'chart.js';
-import { IIntradayResponse } from '../shared/interfaces/common-interfaces';
+import { IGlobalQuote, IIntradayResponse, IMatches } from '../shared/interfaces/common-interfaces';
 import { DateTime } from 'luxon';
 
 @Injectable({
@@ -14,12 +14,16 @@ export class StockTrackerService {
 
     constructor(private http: HttpClient) { }
     
-    public getTicker(request: ISearchRequest): Observable<any> {
-        return this.http.post<any>(`${this.urlPrefix}/GetTicker`, request);
+    public getTicker(request: ISearchRequest): Observable<IMatches> {
+        return this.http.post<IMatches>(`${this.urlPrefix}/GetTicker`, request);
     }
 
-    public getTimeSeriesIntraday(request: ISearchRequest): Observable<any> {
-        return this.http.post<any>(`${this.urlPrefix}/GetTimeSeriesIntraday`, request);
+    public getTimeSeriesIntraday(request: ISearchRequest): Observable<IIntradayResponse> {
+        return this.http.post<IIntradayResponse>(`${this.urlPrefix}/GetTimeSeriesIntraday`, request);
+    }
+
+    public getGlobalQuote(request: ISearchRequest): Observable<IGlobalQuote> {
+        return this.http.post<IGlobalQuote>(`${this.urlPrefix}/GetGlobalQuotw`, request);
     }
 
     public configureChart(response: IIntradayResponse): ChartConfiguration['data'] {

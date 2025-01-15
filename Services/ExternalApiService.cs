@@ -66,6 +66,20 @@ namespace StockTracker.Web.Services
             return null;
         }
 
+        public async Task<string> GetGlobalQuotw(SearchRequest request)
+        {
+            var requestUrl = ConstructUrl(request);
+            var response = await _httpClient.GetAsync(requestUrl);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                return responseContent;
+            }
+
+            return null;
+        }
+
         private string ConstructUrl(SearchRequest request)
         {
             string constructedUrl = string.Empty;

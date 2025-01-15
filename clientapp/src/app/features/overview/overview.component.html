@@ -8,12 +8,12 @@
             <p class="text-alice-blue-dark text-2xl font-semibold">{{ etf.symbol }}</p>
             <div>
               <p class="text-alice-blue-dark">Open {{ etf.open | currency: 'USD' }}</p>
-              <p class="text-alice-blue-dark">Latest {{ etf.close | currency: 'USD' }}</p>
+              <p class="text-alice-blue-dark">Latest {{ etf.price | currency: 'USD' }}</p>
             </div>
           </div>
           <div class="flex items-center">
             <p class="text-alice-blue-dark p-4 text-xl rounded-lg bg-raisin-black"
-            [class]="etf.open < etf.close ? 'text-pastel-green' : 'text-pastel-red'">{{ etf.percentChange }}%</p>
+            [class]="etf.open < etf.price ? 'text-pastel-green' : 'text-pastel-red'">{{ etf.changePercent }}</p>
           </div>
         </div>
       }

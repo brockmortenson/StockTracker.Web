@@ -7,5 +7,7 @@ namespace StockTracker.Web.Services
         Task<string> GetTicker(SearchRequest request);
 
         Task<string> GetTimeSeriesIntraday(SearchRequest request);
+
+        Task<string> GetGlobalQuotw(SearchRequest request);
     }
 }
